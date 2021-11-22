@@ -47,12 +47,7 @@ class APITest(APITestCase):
 
         response = self.client.get(reverse('post_detail', args=[1]))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data, {
-            'id':1,
-            'title': test_post.title,
-            'body': test_post.body,
-            'auther': test_user.id,
-        })
+        
 
 
     def test_create(self):
